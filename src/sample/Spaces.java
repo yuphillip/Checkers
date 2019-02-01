@@ -2,31 +2,31 @@ package sample;
 
 public class Spaces
 {
-    private int x = 0, y = 0;
+    int xLoc,yLoc;
 
     public Spaces(int x, int y)
     {
-        this.x = x;
-        this.y = y;
+        xLoc = x;
+        yLoc = y;
     }
 
     public int getX()
     {
-        return x;
+        return xLoc;
     }
 
-    public void setX(int num)
+    public void setX(int xLoc)
     {
-        x = num;
+        this.xLoc = xLoc;
     }
 
     public int getY()
     {
-        return y;
+        return yLoc;
     }
 
-    public void setY(int num)
+    public void setY(int yLoc)
     {
-        y = num;
+        this.yLoc = yLoc;
     }
 }
