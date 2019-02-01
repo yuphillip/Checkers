@@ -23,6 +23,8 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        Spaces board[][] = new Spaces[8][8];
+        
         launch(args);
     }
 }
