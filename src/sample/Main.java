@@ -23,8 +23,14 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        Spaces board[][] = new Spaces[8][8];
-        
+        Spaces[][] board = new Spaces[8][8];
+        for (int x = 0; x<board.length; x++)
+        {
+            for (int y = 0; y < board[x].length; y++)
+            {
+                board[x][y] = new Spaces(x,y);
+            }
+        }
         launch(args);
     }
 }
