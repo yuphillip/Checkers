@@ -3,19 +3,19 @@ package sample;
 public class CheckerPiece {
 
     private String team;
-    private int x;
-    private int y;
+    private int xLoc;
+    private int yLoc;
 
-    public CheckerPiece(String team, int x, int y)
+    public CheckerPiece(String team, int xLoc, int yLoc)
     {
         this.team = team;
-        this.x = x;
-        this.y = y;
+        this.xLoc = xLoc;
+        this.yLoc = yLoc;
     }
-    public boolean isLegal(String team)
+    public boolean isLegal(String team, int xLoc, int yLoc)
     {
-        boolean Legal = (diagonalMovement() && spaceOccupied(team));
-        if(spaceOccupied(team) == true)
+        boolean Legal = (diagonalMovement() && spaceOccupied(team,5,6));
+        if(spaceOccupied(team,5,6) == true)
         {
             capture(team);
         }
@@ -23,7 +23,7 @@ public class CheckerPiece {
     }
     public void move(int a, int b)
     {
-        isLegal("red");
+        isLegal("red",5,6,);
 
     }
     public boolean capture(String team)
@@ -35,7 +35,7 @@ public class CheckerPiece {
     {
         return false;
     }
-    private boolean spaceOccupied(String team)
+    private boolean spaceOccupied(String team, int xLoc, int yLoc)
     {
         return false;
     }
