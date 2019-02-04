@@ -6,6 +6,6 @@ import java.io.IOException;
 
 public class csv {
     public static void main(String[] args) {
-        String readIn=" "
+        String readIn=" op";
     }
 }
