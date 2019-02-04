@@ -6,6 +6,13 @@ import java.io.IOException;
 
 public class csv {
     public static void main(String[] args) {
-        String readIn=" op";
+        String readIn="Checkers.csv";
+        BufferedReader br = null;
+        String newRow = "";
+        String newCol = ",";
+        try
+        {
+
+        }
     }
 }
