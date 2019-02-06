@@ -3,11 +3,13 @@ package sample;
 public class Spaces
 {
     int xLoc,yLoc;
+    String occupied;
 
-    public Spaces(int x, int y)
+    public Spaces(int x, int y, String piece)
     {
         xLoc = x;
         yLoc = y;
+        occupied = piece;
     }
 
     public int getX()

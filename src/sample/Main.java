@@ -28,7 +28,7 @@ public class Main extends Application {
         {
             for (int y = 0; y < board[x].length; y++)
             {
-                board[x][y] = new Spaces(x,y);
+                board[x][y] = new Spaces(x,y,);
                 System.out.print(board[x][y]);
             }
             System.out.println();
