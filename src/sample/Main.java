@@ -15,11 +15,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        Board.makeBoard(primaryStage);
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Checkers");
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
-        Board.makeBoard(primaryStage);
     }
 
 

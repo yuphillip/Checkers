@@ -25,8 +25,6 @@ public abstract class Board extends Application{
     public static void makeBoard(Stage primaryStage) {
         double sceneWidth = 768;
         double sceneHeight = 768;
-        int n = 8;
-        int m = 8;
         double gridWidth = sceneWidth / 8;
         double gridHeight = sceneHeight / 8;
         String occupied = "";
@@ -40,8 +38,7 @@ public abstract class Board extends Application{
             }
         }
         Scene scene = new Scene( root, sceneWidth, sceneHeight);
-
-        primaryStage.setScene( scene);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }
