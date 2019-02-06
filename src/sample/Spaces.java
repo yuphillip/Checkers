@@ -1,34 +1,30 @@
 package sample;
 
-public class Spaces
-{
-    int xLoc,yLoc;
-    String occupied;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-    public Spaces(int x, int y, String piece)
-    {
-        xLoc = x;
-        yLoc = y;
-        occupied = piece;
-    }
+public class Spaces extends StackPane {
 
-    public int getX()
-    {
-        return xLoc;
-    }
+    public Spaces(int x, int y, String piece, double x2, double y2, double width, double height) {
 
-    public void setX(int xLoc)
-    {
-        this.xLoc = xLoc;
-    }
+        // create rectangle
+        Rectangle rectangle = new Rectangle( width, height);
+        rectangle.setStroke(Color.BLACK);
+        if((x+y)%2 == 0)
+        {
+            rectangle.setFill(Color.RED);
+        }
+        else
+            rectangle.setFill(Color.BLACK);
 
-    public int getY()
-    {
-        return yLoc;
-    }
+        Label label = new Label();
 
-    public void setY(int yLoc)
-    {
-        this.yLoc = yLoc;
+        // set position
+        setTranslateX( x2+100);
+        setTranslateY( y2+100);
+
+        getChildren().addAll( rectangle);
     }
 }

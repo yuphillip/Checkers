@@ -23,7 +23,7 @@ public class CheckerPiece {
     }
     public void move(int a, int b)
     {
-        isLegal("red",5,6,);
+        isLegal("red",5,6);
 
     }
     public boolean capture(String team)

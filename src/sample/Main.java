@@ -19,20 +19,11 @@ public class Main extends Application {
         primaryStage.setTitle("Checkers");
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
+        Board.makeBoard(primaryStage);
     }
 
 
     public static void main(String[] args) {
-        Spaces[][] board = new Spaces[8][8];
-        for (int x = 0; x<board.length; x++)
-        {
-            for (int y = 0; y < board[x].length; y++)
-            {
-                board[x][y] = new Spaces(x,y,"");
-                System.out.print(board[x][y]);
-            }
-            System.out.println();
-        }
         launch(args);
     }
 }
