@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class csv {
+//This should be called from Runner. Needs to be overloaded by changing the parameter from String[] args to something else.
+//Use String{} args to call immediately.
+public class csvReader {
     public static void main(String[] args) {
         String readIn="C:\\Users\\BT_1N3_01\\IdeaProjects\\Checkers\\src\\sample\\Checkers.csv";
         BufferedReader br = null;
@@ -14,6 +16,7 @@ public class csv {
 
         try
         {
+            //Buffered Reader only reads. Here is a wiki with all of it's methods. https://www.javatpoint.com/java-bufferedreader-class
             br = new BufferedReader(new FileReader(readIn));
             //While there is a line with text in it, this loop will trigger.
             while((newRow=br.readLine())!=null)
@@ -34,7 +37,6 @@ public class csv {
 
                 }
                 System.out.println("\n");
-                //System.out.println(stats[0]+stats[1]);
 
             }
         }
