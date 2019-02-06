@@ -1,10 +1,13 @@
 package sample;
 
+import java.lang.reflect.Array;
+
 public class CheckerPiece {
 
-    private String team;
-    private int xLoc;
-    private int yLoc;
+    String team;
+    int xLoc;
+    int yLoc;
+    Array Spaces[][];
 
     public CheckerPiece(String team, int xLoc, int yLoc)
     {
@@ -14,25 +17,26 @@ public class CheckerPiece {
     }
     public boolean isLegal(String team, int xLoc, int yLoc)
     {
-        boolean Legal = (diagonalMovement() && spaceOccupied(team,5,6));
-        if(spaceOccupied(team,5,6) == true)
-        {
-            capture(team);
-        }
+        boolean Legal = (diagonalMovement(team,xLoc,yLoc) && spaceOccupied(team,xLoc,yLoc));
+
+
         return Legal;
     }
-    public void move(int a, int b)
+    public void move(String team, int a, int b)
     {
-        isLegal("red",5,6,);
+        isLegal(team,a,b);
+
+
 
     }
-    public boolean capture(String team)
+    public void capture()
     {
-        move(9,10);
-        return false;
+
+
     }
-    private boolean diagonalMovement()
+    private boolean diagonalMovement(String team,int xLoc, int yLoc)
     {
+
         return false;
     }
     private boolean spaceOccupied(String team, int xLoc, int yLoc)
