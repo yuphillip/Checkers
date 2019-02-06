@@ -14,7 +14,7 @@ public class CheckerPiece {
     }
     public boolean isLegal(String team)
     {
-
+        return true;
     }
     public void move()
     {
