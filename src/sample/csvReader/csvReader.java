@@ -10,8 +10,8 @@ public class csvReader {
     public static void main(String[] args) {
         String readIn="C:\\Users\\BT_1N3_01\\IdeaProjects\\Checkers\\src\\sample\\Checkers.csv";
         BufferedReader br = null;
-        String newRow = "";
-        String newCol = ",";
+        String row = "";
+        String col = ",";
 
 
         try
@@ -19,9 +19,10 @@ public class csvReader {
             //Buffered Reader only reads. Here is a wiki with all of it's methods. https://www.javatpoint.com/java-bufferedreader-class
             br = new BufferedReader(new FileReader(readIn));
             //While there is a line with text in it, this loop will trigger.
-            while((newRow=br.readLine())!=null)
+            while((row=br.readLine())!=null)
             {
-                String[] stats=newRow.split(newCol);
+                String[] stats=row.split(col);
+
                 System.out.print(stats[0]+" ");
                 //Need to make a for loop, to get a every cell in a row.
                 for (int i=1; i<stats.length;i++)
@@ -42,10 +43,12 @@ public class csvReader {
         }
         catch(FileNotFoundException e)
         {
+            System.out.println("Hey");
             e.printStackTrace();
         }
         catch(IOException e)
         {
+            System.out.println("Hey");
             e.printStackTrace();
         }
 
