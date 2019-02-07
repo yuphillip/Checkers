@@ -20,15 +20,12 @@ public class Main extends Application {
         Group root = new Group();
         for(int x=0; x < board.length; x++) {
             for(int y = 0; y < board[x].length; y++) {
+                color = "";
                 if((x+y)%2 == 0 && y <= 3)
                 {
                      color = "black";
                 }
-                else if(y >= 4 && y <= 5)
-                {
-                    color = "";
-                }
-                else
+                else if((x+y)%2 == 0 && y >= 6)
                 {
                     color = "red";
                 }
@@ -42,6 +39,7 @@ public class Main extends Application {
         primaryStage.setTitle("Checkers");
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
+
         CheckerPiece blackTeam[] = new CheckerPiece[11];
         CheckerPiece redTeam[] = new CheckerPiece[11];
         for(int i = 0;i<blackTeam.length;i++)
