@@ -14,8 +14,8 @@ public class Spaces extends StackPane {
         else {
             rectangle.setFill(Color.BLACK);
         }
-        setTranslateX(x2+150);
-        setTranslateY(y2+150);
+        setTranslateX(x2+160);
+        setTranslateY(y2+80);
         getChildren().addAll( rectangle);
     }
 }
