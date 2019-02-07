@@ -5,7 +5,7 @@ import javafx.scene.shape.Rectangle;
 
 public class Spaces extends StackPane {
 
-    public Spaces(int x, int y, String piece, double x2, double y2, double width, double height) {
+    public Spaces(int x, int y, CheckerPiece piece, double x2, double y2, double width, double height) {
         Rectangle rectangle = new Rectangle( width, height);
         rectangle.setStroke(Color.BLACK);
         if((x+y)%2 == 0) {
