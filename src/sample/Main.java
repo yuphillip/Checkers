@@ -4,29 +4,36 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
-import javafx.scene.image.ImageView;
-
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        String color = "";
         double sceneWidth = 300;
         double sceneHeight = 300;
         double gridWidth = sceneWidth / 8;
         double gridHeight = sceneHeight / 8;
-        String occupied = "";
         Spaces[][] board = new Spaces[8][8];
         Group root = new Group();
         for(int x=0; x < board.length; x++) {
             for(int y = 0; y < board[x].length; y++) {
-                Spaces node = new Spaces(x, y, occupied, x * gridWidth, y * gridHeight, gridWidth, gridHeight);
+                if((x+y)%2 == 0 && y <= 3)
+                {
+                     color = "black";
+                }
+                else if(y >= 4 && y <= 5)
+                {
+                    color = "";
+                }
+                else
+                {
+                    color = "red";
+                }
+                CheckerPiece piece = new CheckerPiece(color, x, y);
+                Spaces node = new Spaces(x, y, piece, x * gridWidth, y * gridHeight, gridWidth, gridHeight);
                 root.getChildren().add(node);
                 board[x][y] = node;
             }
