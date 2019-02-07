@@ -1,13 +1,12 @@
 package sample;
 
-import java.lang.reflect.Array;
 
 public class CheckerPiece {
 
     String team;
     int xLoc;
     int yLoc;
-    Array Spaces[][];
+    Spaces[][] board;
 
     public CheckerPiece(String team, int xLoc, int yLoc)
     {
@@ -15,9 +14,26 @@ public class CheckerPiece {
         this.xLoc = xLoc;
         this.yLoc = yLoc;
     }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public int getyLoc() {
+        return yLoc;
+    }
+
+    public int getxLoc() {
+        return xLoc;
+    }
+
     public boolean isLegal(String team, int xLoc, int yLoc)
     {
-        boolean Legal = (diagonalMovement(team,xLoc,yLoc) && spaceOccupied(team,xLoc,yLoc));
+        boolean Legal = (diagonalMovement(team,xLoc,yLoc));
+        if(Legal == true)
+        {
+           capture(team,xLoc,yLoc);
+        }
 
 
         return Legal;
@@ -29,18 +45,63 @@ public class CheckerPiece {
 
 
     }
-    public void capture()
+    public boolean canCapture(String team, int x, int y)
     {
+        if(team == "red")
+        {
+            if(!(board[xLoc--][yLoc--]==null))
+            {
+                return true;
+            }
+            if(!(board[xLoc++][yLoc--]==null))
+            {
+                return true;
+            }
+        }
+        if(team == "black")
+        {
+            if(!(board[xLoc--][yLoc++]==null))
+            {
+                return true;
+            }
+            if(!(board[xLoc++][yLoc++]==null))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void capture(String team, int xLoc, int yLoc)
+    {
+        while(canCapture(team,xLoc,yLoc))
+        {
 
-
+        }
     }
     private boolean diagonalMovement(String team,int xLoc, int yLoc)
     {
-
-        return false;
-    }
-    private boolean spaceOccupied(String team, int xLoc, int yLoc)
-    {
+        if(team == "red")
+        {
+            if(board[xLoc--][yLoc--]==null)
+            {
+                return true;
+            }
+            if(board[xLoc++][yLoc--]==null)
+            {
+                return true;
+            }
+        }
+        if(team == "black")
+        {
+            if(board[xLoc--][yLoc++]==null)
+            {
+                return true;
+            }
+            if(board[xLoc++][yLoc++]==null)
+            {
+                return true;
+            }
+        }
         return false;
     }
 }

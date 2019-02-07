@@ -20,6 +20,13 @@ public class Main extends Application {
         primaryStage.setTitle("Checkers");
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
+        CheckerPiece blackTeam[] = new CheckerPiece[11];
+        CheckerPiece redTeam[] = new CheckerPiece[11];
+        for(int i = 0;i<blackTeam.length;i++)
+        {
+            CheckerPiece obj = new CheckerPiece;
+        }
+
     }
 
 
