@@ -32,7 +32,13 @@ public class Main extends Application {
                 CheckerPiece piece = new CheckerPiece(color, x, y);
                 Spaces node = new Spaces(x, y, piece, x * gridWidth, y * gridHeight, gridWidth, gridHeight);
                 root.getChildren().add(node);
-                board[x][y] = node;
+                if(color.equals("black") || color.equals("red")) {
+                    board[x][y] = node;
+                }
+                else
+                {
+                    board[x][y] = null;
+                }
             }
         }
         root.getChildren().add((Node) FXMLLoader.load(getClass().getResource("sample.fxml")));
@@ -40,13 +46,13 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
 
-        CheckerPiece blackTeam[] = new CheckerPiece[11];
+        /*CheckerPiece blackTeam[] = new CheckerPiece[11];
         CheckerPiece redTeam[] = new CheckerPiece[11];
         for(int i = 0;i<blackTeam.length;i++)
         {
             CheckerPiece obj = new CheckerPiece;
         }
-
+*/
     }
 
 
