@@ -29,6 +29,7 @@ public class CheckerPiece {
 
     public boolean isLegal(String team, int xLoc, int yLoc)
     {
+
         boolean Legal = (diagonalMovement(team,xLoc,yLoc));
         if(Legal == true)
         {
@@ -70,6 +71,7 @@ public class CheckerPiece {
             }
         }
         return false;
+
     }
     public void capture(String team, int xLoc, int yLoc)
     {
